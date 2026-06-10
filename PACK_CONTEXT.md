@@ -6,7 +6,7 @@ Il documente les décisions prises dans le repo du mod pour ne pas repartir de z
 ## Repos liés
 - **Mod** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD.git`
 - **Bot Discord** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Discord-BOT.git`
-- **Pack** (nouveau) : à créer — `Nouvelle-Terre-SMP---Pack`
+- **Pack** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack.git` ✅ créé et cloné dans `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack`
 
 ## Infrastructure
 - Serveur Minecraft : Minestrator — IP `91.197.6.86`, port `24314`
@@ -31,7 +31,7 @@ Il documente les décisions prises dans le repo du mod pour ne pas repartir de z
 ## Mod — infos techniques
 - Fabric Loader : `0.15.7`
 - Minecraft : `1.20.1`
-- Version actuelle du mod : voir `gradle.properties` (`mod_version`)
+- Version actuelle du mod : `0.1.6-beta`
 - Le JAR du mod est publié automatiquement sur GitHub Releases à chaque push sur `main`
   - URL pattern : `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD/releases/latest/download/nouvelle-terre-bridge-{version}.jar`
 - Le mod tourne côté **client ET serveur** — les joueurs doivent l'avoir installé
@@ -44,6 +44,21 @@ Il documente les décisions prises dans le repo du mod pour ne pas repartir de z
 - Généré par GitHub Actions à chaque release, hash SHA-1 calculé depuis le fichier téléchargé
 - Le serveur envoie le resource pack automatiquement aux joueurs à la connexion
 - Ne pas inclure le resource pack dans le modpack packwiz (déjà géré serveur-side)
+
+## État d'avancement
+
+### ✅ Fait
+- Repo GitHub créé : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack`
+- Cloné en local : `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack`
+- GitHub CLI (`gh`) installé et authentifié comme `0Sacha` à `C:\Program Files\GitHub CLI\gh.exe`
+- Mod v0.1.6-beta stable (GUI HDV complet, économie, virements récurrents, resource pack)
+
+### ⏳ À faire
+- Initialiser packwiz dans ce dossier
+- Configurer `pack.toml`
+- Référencer les mods
+- Mettre en place GitHub Actions + GitHub Pages
+- Rédiger le README d'installation joueur
 
 ## Ce qu'il faut faire dans le repo Pack
 
@@ -83,7 +98,7 @@ README.md                  ← instructions d'installation pour les joueurs
 ```
 -javaagent:packwiz-installer-bootstrap.jar=https://0sacha.github.io/Nouvelle-Terre-SMP---Pack/pack.toml
 ```
-(URL à ajuster selon le nom exact du repo GitHub)
+Le nom du repo est confirmé : `Nouvelle-Terre-SMP---Pack` → l'URL GitHub Pages sera exactement celle ci-dessus.
 
 ## Notes importantes
 - Le mod `nouvelle-terre-bridge` n'est pas sur Modrinth → il faudra le référencer en tant que mod "url" dans packwiz (depuis GitHub Releases)
