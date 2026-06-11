@@ -1,0 +1,79 @@
+name: Mise à jour automatique nouvelle-terre-bridge
+
+on:
+  repository_dispatch:
+    types: [mod-released]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PACK_UPDATE_TOKEN }}
+
+      - name: Récupérer la dernière release du mod
+        id: release
+        run: |
+          ASSET=$(curl -s https://api.github.com/repos/0Sacha/Nouvelle-Terre-SMP---MOD/releases/latest \
+            | jq -r '.assets[] | select(.name | test("nouvelle-terre-bridge-.+\\.jar")) | {name, url: .browser_download_url} | @base64')
+          NAME=$(echo $ASSET | base64 -d | jq -r '.name')
+          URL=$(echo $ASSET | base64 -d | jq -r '.url')
+          VERSION=$(echo $NAME | sed 's/nouvelle-terre-bridge-\(.*\)\.jar/\1/')
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Vérifier si déjà à jour
+        id: check
+        run: |
+          CURRENT=$(grep 'filename' mods/nouvelle-terre-bridge.pw.toml | sed 's/.*"\(.*\)"/\1/')
+          if [ "$CURRENT" = "${{ steps.release.outputs.name }}" ]; then
+            echo "uptodate=true" >> $GITHUB_OUTPUT
+          else
+            echo "uptodate=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Calculer le hash SHA1
+        if: steps.check.outputs.uptodate == 'false'
+        id: hash
+        run: |
+          curl -sL "${{ steps.release.outputs.url }}" -o /tmp/bridge.jar
+          HASH=$(sha1sum /tmp/bridge.jar | cut -d' ' -f1)
+          echo "sha1=$HASH" >> $GITHUB_OUTPUT
+
+      - name: Mettre à jour nouvelle-terre-bridge.pw.toml
+        if: steps.check.outputs.uptodate == 'false'
+        run: |
+          cat > mods/nouvelle-terre-bridge.pw.toml << EOF
+          name = "Nouvelle Terre Bridge"
+          filename = "${{ steps.release.outputs.name }}"
+          side = "both"
+
+          [download]
+          url = "${{ steps.release.outputs.url }}"
+          hash-format = "sha1"
+          hash = "${{ steps.hash.outputs.sha1 }}"
+          EOF
+
+      - name: Installer packwiz
+        if: steps.check.outputs.uptodate == 'false'
+        run: |
+          curl -sL https://github.com/packwiz/packwiz/releases/latest/download/packwiz_linux_amd64.zip -o /tmp/packwiz.zip
+          unzip /tmp/packwiz.zip -d /tmp/packwiz
+          chmod +x /tmp/packwiz/packwiz
+          sudo mv /tmp/packwiz/packwiz /usr/local/bin/packwiz
+
+      - name: Refresh index
+        if: steps.check.outputs.uptodate == 'false'
+        run: packwiz refresh
+
+      - name: Commit et push
+        if: steps.check.outputs.uptodate == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mods/nouvelle-terre-bridge.pw.toml index.toml pack.toml
+          git commit -m "chore: update nouvelle-terre-bridge to ${{ steps.release.outputs.version }}"
+          git push
