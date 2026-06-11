@@ -1,4 +1,4 @@
 *.mrpack
-*.zip
+docs/*.zip
 .wrangler/
 .claude/
