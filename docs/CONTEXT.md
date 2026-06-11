@@ -1,107 +1,78 @@
-# Nouvelle Terre — Contexte Launcher / Modpack
+# Nouvelle Terre — Contexte Modpack
 
-Ce fichier est un briefing à destination de Claude pour le projet **Nouvelle-Terre-SMP---Pack**.
-Il documente les décisions prises dans le repo du mod pour ne pas repartir de zéro.
+Briefing pour Claude. Documente l'état du projet pour reprendre n'importe quand.
 
-## Repos liés
-- **Mod** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD.git`
-- **Bot Discord** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Discord-BOT.git`
-- **Pack** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack.git` ✅ créé et cloné dans `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack`
+## Repos
+
+| Repo | URL | Local |
+|------|-----|-------|
+| Pack | `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack` | `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack` |
+| Mod | `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD` | `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---MOD` |
+| Site | `https://github.com/0Sacha/Nouvelle-Terre-SMP` | `https://nouvelle-terre.notdefined.studio` |
+| Bot Discord | `https://github.com/0Sacha/Nouvelle-Terre-SMP---Discord-BOT` | Railway (Node.js) |
 
 ## Infrastructure
-- Serveur Minecraft : Minestrator — IP `91.197.6.86`, port `24314`
-- Bot Discord : Railway (Node.js), user `Nouvelle Terre#9576`
-- Guild ID Discord : `1508123190797406432`
-- Email : `sacha_laville@outlook.fr`
 
-## Stack technique décidée
+- **Serveur Minecraft** : `play.notdefined.studio` (DNS SRV → `91.197.6.86:24314`, Minestrator)
+- **Pack hébergé** : `https://pack.nouvelle-terre.notdefined.studio/pack.toml` (Cloudflare Pages)
+- **Bot Discord** : user `Nouvelle Terre#9576`, Guild ID `1508123190797406432`
+- **Fabric Loader** : `0.15.7`, **Minecraft** : `1.20.1`
 
-### Approche : packwiz + GitHub Pages + Prism Launcher
-- Le modpack est géré avec **packwiz** (CLI)
-- Les fichiers du pack sont hébergés via **GitHub Pages** du repo Pack
-- Les joueurs installent **Prism Launcher**, importent un `.mrpack` une seule fois
-- Un hook pre-launch (`packwiz-installer-bootstrap.jar`) vérifie et applique les mises à jour **automatiquement à chaque lancement**
-- Les joueurs n'ont jamais à réinstaller manuellement après la première fois
+## Stack technique
 
-### Pourquoi pas un launcher custom ?
-- Les launchers custom nécessitent une approbation Microsoft/Mojang pour l'auth des comptes
-- Impossible pour un projet indépendant sans partnership Mojang
-- Modrinth App a été écarté car les joueurs devaient réinstaller manuellement à chaque maj du pack
+- **packwiz** + **Cloudflare Pages** + **Prism Launcher**
+- Les joueurs importent `Nouvelle Terre.zip` (instance Prism pré-configurée) depuis les releases GitHub
+- Pre-launch Prism : `"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://pack.nouvelle-terre.notdefined.studio/pack.toml`
+- Mises à jour automatiques à chaque lancement
 
-## Mod — infos techniques
-- Fabric Loader : `0.15.7`
-- Minecraft : `1.20.1`
-- Version actuelle du mod : `0.1.6-beta`
-- Le JAR du mod est publié automatiquement sur GitHub Releases à chaque push sur `main`
-  - URL pattern : `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD/releases/latest/download/nouvelle-terre-bridge-{version}.jar`
-- Le mod tourne côté **client ET serveur** — les joueurs doivent l'avoir installé
-- Dépendances du mod :
-  - `fabric_version=0.92.0+1.20.1`
-  - `cadmus_version=1.0.8+1.20.1` (gestion territoires)
+## Pipeline CI/CD (100% automatique)
 
-## Resource pack HDV
-- URL fixe : `https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD/releases/latest/download/nouvelle-terre-hdv.zip`
-- Généré par GitHub Actions à chaque release, hash SHA-1 calculé depuis le fichier téléchargé
-- Le serveur envoie le resource pack automatiquement aux joueurs à la connexion
-- Ne pas inclure le resource pack dans le modpack packwiz (déjà géré serveur-side)
+Push sur repo MOD → GitHub Actions :
+1. Compile le JAR
+2. Crée la release GitHub
+3. Upload le JAR sur le serveur via **SFTP** (`7017.mystrator.com:2022`, user `yellox605.30551e80`, dossier `/mods`)
+4. Redémarre le serveur via **RCON** (port `40539`) avec `/stop` → Minestrator redémarre auto
+5. Envoie `repository_dispatch` `mod-released` → repo Pack se met à jour automatiquement
+6. Cloudflare déploie → joueurs mis à jour au prochain lancement
 
-## État d'avancement
+## Secrets GitHub
 
-### ✅ Fait
-- Repo GitHub créé : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack`
-- Cloné en local : `c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack`
-- GitHub CLI (`gh`) installé et authentifié comme `0Sacha` à `C:\Program Files\GitHub CLI\gh.exe`
-- Mod v0.1.6-beta stable (GUI HDV complet, économie, virements récurrents, resource pack)
+| Secret | Repos | Usage |
+|--------|-------|-------|
+| `CLOUDFLARE_API_TOKEN` | Pack | Déploiement Cloudflare Pages |
+| `PACK_UPDATE_TOKEN` | MOD + Pack | Cross-repo dispatch + commit |
+| `SFTP_PASSWORD` | MOD | Upload JAR sur serveur |
+| `RCON_PASSWORD` | MOD | Redémarrage serveur |
 
-### ⏳ À faire
-- Initialiser packwiz dans ce dossier
-- Configurer `pack.toml`
-- Référencer les mods
-- Mettre en place GitHub Actions + GitHub Pages
-- Rédiger le README d'installation joueur
+## Outils locaux
 
-## Ce qu'il faut faire dans le repo Pack
+- **packwiz** : `$env:USERPROFILE\go\bin\packwiz.exe` (⚠️ le stub Windows Store est invalide)
+- **Go** : installé via winget
+- **wrangler** : `npx wrangler` (authentifié OAuth Cloudflare)
 
-### Structure cible
-```
-pack.toml                  ← config packwiz (MC version, loader, pack name)
-mods/                      ← références mods (.pw.toml par mod)
-  nouvelle-terre-bridge.pw.toml
-  fabric-api.pw.toml
-  cadmus.pw.toml
-  [autres mods éventuels]
-index.toml                 ← index auto-généré par packwiz
-.github/
-  workflows/
-    deploy.yml             ← génère le pack et publie sur GitHub Pages
-README.md                  ← instructions d'installation pour les joueurs
+## Mise à jour mods Modrinth (manuelle)
+
+```powershell
+cd "c:\Users\sacha\Documents\dev\Nouvelle-Terre-SMP---Pack"
+& "$env:USERPROFILE\go\bin\packwiz.exe" update --all
+& "$env:USERPROFILE\go\bin\packwiz.exe" refresh
+git add -A && git commit -m "chore: update mods" && git push
 ```
 
-### Workflow GitHub Actions à mettre en place
-1. Push sur `main` → Actions lance `packwiz refresh` + `packwiz modrinth export` (génère `.mrpack`)
-2. Publie les fichiers du pack sur GitHub Pages (branche `gh-pages`)
-3. Attache le `.mrpack` à une Release GitHub (pour le téléchargement initial joueur)
+## Structure du repo Pack
 
-### Installation joueur (première fois)
-1. Installer **Prism Launcher** : https://prismlauncher.org
-2. Télécharger le `.mrpack` depuis les Releases du repo Pack
-3. Dans Prism : "Add Instance" → "Import from zip" → sélectionner le `.mrpack`
-4. L'instance est configurée automatiquement avec le hook packwiz-installer-bootstrap
-
-### Mise à jour automatique (après la première installation)
-- Le `packwiz-installer-bootstrap.jar` est configuré comme argument JVM pre-launch dans Prism
-- À chaque lancement, il fetch `https://0sacha.github.io/Nouvelle-Terre-SMP---Pack/pack.toml`
-- Compare les hashes, télécharge uniquement les fichiers modifiés
-- Transparent pour le joueur
-
-### Lien packwiz-installer-bootstrap à utiliser
 ```
--javaagent:packwiz-installer-bootstrap.jar=https://0sacha.github.io/Nouvelle-Terre-SMP---Pack/pack.toml
+pack.toml                        ← config packwiz (servi par Cloudflare)
+index.toml                       ← index auto-généré par packwiz
+_headers                         ← CORS Cloudflare Pages
+packwiz-installer-bootstrap.jar  ← inclus dans le .mrpack
+mods/                            ← références mods (.pw.toml)
+scripts/
+  update-bridge.ps1              ← mise à jour manuelle nouvelle-terre-bridge
+.github/workflows/
+  deploy.yml                     ← déploiement Cloudflare sur push
+  auto-update.yml                ← écoute mod-released, met à jour le pack
+docs/
+  CONTEXT.md                     ← ce fichier
+README.md                        ← guide installation joueurs
 ```
-Le nom du repo est confirmé : `Nouvelle-Terre-SMP---Pack` → l'URL GitHub Pages sera exactement celle ci-dessus.
-
-## Notes importantes
-- Le mod `nouvelle-terre-bridge` n'est pas sur Modrinth → il faudra le référencer en tant que mod "url" dans packwiz (depuis GitHub Releases)
-- Cadmus est disponible sur Modrinth → référence directe possible
-- Fabric API est sur Modrinth → référence directe possible
-- Penser à inclure un `options.txt` ou config de base pour orienter les joueurs (résolution, etc.) — optionnel
