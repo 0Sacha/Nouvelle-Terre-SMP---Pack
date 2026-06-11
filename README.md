@@ -63,6 +63,9 @@ Tu n'as **rien à faire** quand le modpack est mis à jour. À chaque fois que t
 
 ## Problèmes fréquents
 
+**Une fenêtre d'erreur "Failed file downloads" apparaît au lancement**
+→ C'est normal lors de la toute première installation. Clique sur **Continue** (pas sur "Cancel launch") et le jeu se lance quand même. Les mods se téléchargeront correctement au lancement suivant.
+
 **Le jeu ne se lance pas / erreur au démarrage**
 → Vérifie que tu es bien connecté à internet au lancement (le système de mise à jour en a besoin)
 
