@@ -21,8 +21,16 @@ file = "PACK_CONTEXT.md"
 hash = "7f6ef90ff7066f49d5b7a11b017d6197786ff3669a818d9760032a3dfe181b58"
 
 [[files]]
+file = "README.md"
+hash = "182885a43cbbd25d4dab79001f73eb054af7abf8c3cc920467af56eec13fc929"
+
+[[files]]
 file = "_headers"
 hash = "502906683b25bfc4b0d8ae382c30225b4c523bef6ed135f25b0257e51a2bb320"
+
+[[files]]
+file = "docs/Nouvelle Terre.zip"
+hash = "c1d376a4e0881614ecd5fd2b8970ba19e8df15032ffb1d8f97d87691fca9c5de"
 
 [[files]]
 file = "mods/architectury.pw.toml"
@@ -308,3 +316,11 @@ metafile = true
 file = "mods/zoomify.pw.toml"
 hash = "f0ef085dfd0a0856419b2c1f36e11359d7c5787575cd07a185db847a567a8730"
 metafile = true
+
+[[files]]
+file = "packwiz-installer-bootstrap.jar"
+hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
+
+[[files]]
+file = "scripts/update-bridge.ps1"
+hash = "f9a33e4c34db19f2ca9966fbf772cd8fb77a1f6ec8e3562ce5134c44c7bd76cd"

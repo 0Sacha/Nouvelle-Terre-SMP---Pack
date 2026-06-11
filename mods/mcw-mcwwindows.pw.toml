@@ -1,0 +1,13 @@
+name = ""
+filename = "mcw-mcwwindows-2.4.2-mc1.20.1fabric.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/C7I0BCni/versions/dGiIkdi3/mcw-mcwwindows-2.4.2-mc1.20.1fabric.jar"
+hash-format = "sha1"
+hash = "90ef895d64169afd1d5aafd83cb338eb2a43fc59"
+
+[update]
+[update.modrinth]
+mod-id = "C7I0BCni"
+version = "dGiIkdi3"

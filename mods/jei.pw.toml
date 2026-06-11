@@ -1,0 +1,13 @@
+name = ""
+filename = "jei-1.20.1-fabric-15.20.0.130.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/u6dRKJwZ/versions/46OW9urw/jei-1.20.1-fabric-15.20.0.130.jar"
+hash-format = "sha1"
+hash = "3a39a843fba06b51f56094750770503f613a2731"
+
+[update]
+[update.modrinth]
+mod-id = "u6dRKJwZ"
+version = "46OW9urw"

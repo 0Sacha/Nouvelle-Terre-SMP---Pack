@@ -1,0 +1,13 @@
+name = ""
+filename = "voicechat-fabric-1.20.1-2.6.17.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9eGKb6K1/versions/MI9jEz1C/voicechat-fabric-1.20.1-2.6.17.jar"
+hash-format = "sha1"
+hash = "77749abae63d949a09d80ad6585ebd44a5a8dc19"
+
+[update]
+[update.modrinth]
+mod-id = "9eGKb6K1"
+version = "MI9jEz1C"

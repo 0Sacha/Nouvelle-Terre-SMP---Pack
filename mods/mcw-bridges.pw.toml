@@ -1,0 +1,13 @@
+name = ""
+filename = "mcw-bridges-3.1.2-mc1.20.1fabric.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/GURcjz8O/versions/bt7noi5F/mcw-bridges-3.1.2-mc1.20.1fabric.jar"
+hash-format = "sha1"
+hash = "097e84a2289a4ba3a2fababad0a56faad712b9d3"
+
+[update]
+[update.modrinth]
+mod-id = "GURcjz8O"
+version = "bt7noi5F"

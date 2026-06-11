@@ -1,0 +1,13 @@
+name = ""
+filename = "create-bluemap-fabric-1.0.0+fabric-1.20.1-build.32.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/W9e7rf1y/versions/AoHFWwaz/create-bluemap-fabric-1.0.0%2Bfabric-1.20.1-build.32.jar"
+hash-format = "sha1"
+hash = "16eb41a80cda5abac3a591ee3069d3e014679ab6"
+
+[update]
+[update.modrinth]
+mod-id = "W9e7rf1y"
+version = "AoHFWwaz"
