@@ -16,7 +16,8 @@ $tag = $release.tag_name
 
 Write-Host "Version trouvee : $version ($tag)"
 
-$current = Get-Content $tomlPath | Select-String 'filename' | ForEach-Object { $_ -match '"(.+)"'; $matches[1] }
+$null = (Get-Content $tomlPath -Raw) -match 'filename = "(.+)"'
+$current = $matches[1]
 if ($current -eq $asset.name) {
     Write-Host "Deja a jour ($version). Rien a faire."
     exit 0
