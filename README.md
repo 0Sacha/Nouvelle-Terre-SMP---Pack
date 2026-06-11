@@ -50,8 +50,7 @@ Au premier lancement, une fenêtre noire va s'ouvrir quelques secondes — c'est
 Ensuite Minecraft se lance tout seul. Tu peux rejoindre le serveur :
 
 ```
-IP     : 91.197.6.86
-Port   : 24314
+play.notdefined.studio
 ```
 
 ---
