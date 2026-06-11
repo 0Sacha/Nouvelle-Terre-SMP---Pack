@@ -30,7 +30,7 @@ hash = "502906683b25bfc4b0d8ae382c30225b4c523bef6ed135f25b0257e51a2bb320"
 
 [[files]]
 file = "docs/Nouvelle Terre.zip"
-hash = "c1d376a4e0881614ecd5fd2b8970ba19e8df15032ffb1d8f97d87691fca9c5de"
+hash = "a514955de593980f42b8ae93ea24bfc0aa8c31616e1decbd7f54550bd50d9b87"
 
 [[files]]
 file = "mods/architectury.pw.toml"
@@ -224,7 +224,7 @@ metafile = true
 
 [[files]]
 file = "mods/nouvelle-terre-bridge.pw.toml"
-hash = "9d4d07198f7072f7655dc43cf0feb52ae4a22e9fc2d2a7117d73e133afe556f5"
+hash = "a7028c64a1631214d33acb3912945bfa1bcbcf1949f953989504217987d45ca7"
 metafile = true
 
 [[files]]
@@ -323,4 +323,4 @@ hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
 
 [[files]]
 file = "scripts/update-bridge.ps1"
-hash = "f9a33e4c34db19f2ca9966fbf772cd8fb77a1f6ec8e3562ce5134c44c7bd76cd"
+hash = "298842892f714b2df5a20cfd4fe042a2e03b85825bdf9bff313bfc095a09b2d3"
