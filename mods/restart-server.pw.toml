@@ -1,0 +1,13 @@
+name = "Restart Server"
+filename = "restart-server-1.2.0+mc1.19.x-1.20.x.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/zG0Bb7gw/versions/btjA8TpA/restart-server-1.2.0%2Bmc1.19.x-1.20.x.jar"
+hash-format = "sha512"
+hash = "37066eea2da20d1e77226d03697a264063b27e860407257b3511931e584b5e8b4a9025abae0a9a2f01e5f10da41a1e08e099393a61a158b8af766ab6f653728d"
+
+[update]
+[update.modrinth]
+mod-id = "zG0Bb7gw"
+version = "btjA8TpA"

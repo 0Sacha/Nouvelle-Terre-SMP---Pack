@@ -5,8 +5,16 @@ file = ".claude/settings.json"
 hash = "ce4999d89dbe2d8ee3cd1488a7fe8f31258591723352fed8a45abadeb1b124d1"
 
 [[files]]
+file = ".github/workflows/auto-update.yml"
+hash = "a46c1841e186d08329ac19a62404eddebf3daabad73229a075d1f4ca76ecebe7"
+
+[[files]]
 file = ".github/workflows/deploy.yml"
 hash = "c3a564b2d4686530781b826f9c07027987f6f970f46d4e61ad1184725dd4f7b8"
+
+[[files]]
+file = ".github/workflows/release.yml"
+hash = "e2a1328da35e64944bcddff0757499ed3b3c38afcb07fbe34666cfdcf84d0128"
 
 [[files]]
 file = ".wrangler/cache/pages.json"
@@ -17,20 +25,36 @@ file = ".wrangler/cache/wrangler-account.json"
 hash = "e1355563679b17560f79779219a29b70fb34dfaa732829ab938b0587b99cddc9"
 
 [[files]]
-file = "PACK_CONTEXT.md"
-hash = "7f6ef90ff7066f49d5b7a11b017d6197786ff3669a818d9760032a3dfe181b58"
+file = "CLAUDE.md"
+hash = "18602527b196145435e5a3efe42a0b0a457b07e7abe0bc0c9a248e81724ff02c"
 
 [[files]]
 file = "README.md"
-hash = "182885a43cbbd25d4dab79001f73eb054af7abf8c3cc920467af56eec13fc929"
+hash = "3349c121a3301f349055756419a853828ee5862d776edc5be4ca9b4860359aa8"
 
 [[files]]
 file = "_headers"
 hash = "502906683b25bfc4b0d8ae382c30225b4c523bef6ed135f25b0257e51a2bb320"
 
 [[files]]
+file = "docs/CONTEXT.md"
+hash = "05a1bb0a86975ad357cb10e728eade5231f915eb283bcb45171f3149ef9f24da"
+
+[[files]]
 file = "docs/Nouvelle Terre.zip"
 hash = "a514955de593980f42b8ae93ea24bfc0aa8c31616e1decbd7f54550bd50d9b87"
+
+[[files]]
+file = "instance/instance.cfg"
+hash = "dca6c437ea581dc4fe01bf6aafc7718a839a1d88e1bed52c17c090a261138f68"
+
+[[files]]
+file = "instance/mmc-pack.json"
+hash = "e7055046641839db625e36ef068caa11b080f6c493fd344ec9a96161e7871b2d"
+
+[[files]]
+file = "instance/servers.dat"
+hash = "4de695626cf59fe672a64ef68578ca1b45967a178f4fac584123cd3c4ae17ae7"
 
 [[files]]
 file = "mods/architectury.pw.toml"
@@ -245,6 +269,11 @@ metafile = true
 [[files]]
 file = "mods/resourcify.pw.toml"
 hash = "38823767d187b5c0fd6db743daf5831e0bca9fd18a7afe250b8b41efd1a0976a"
+metafile = true
+
+[[files]]
+file = "mods/restart-server.pw.toml"
+hash = "1e89db45da4d2a1d213f8f641182c5df664ba896f66313a24b2fbcea674d4161"
 metafile = true
 
 [[files]]
