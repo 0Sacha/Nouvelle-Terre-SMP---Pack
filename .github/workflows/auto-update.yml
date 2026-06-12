@@ -57,13 +57,15 @@ jobs:
           hash = "${{ steps.hash.outputs.sha1 }}"
           EOF
 
+      - name: Installer Go et packwiz
+        if: steps.check.outputs.uptodate == 'false'
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
       - name: Installer packwiz
         if: steps.check.outputs.uptodate == 'false'
-        run: |
-          curl -sL https://github.com/packwiz/packwiz/releases/latest/download/packwiz_linux_amd64.zip -o /tmp/packwiz.zip
-          unzip /tmp/packwiz.zip -d /tmp/packwiz
-          chmod +x /tmp/packwiz/packwiz
-          sudo mv /tmp/packwiz/packwiz /usr/local/bin/packwiz
+        run: go install github.com/packwiz/packwiz@latest
 
       - name: Refresh index
         if: steps.check.outputs.uptodate == 'false'
