@@ -1,62 +1,6 @@
 hash-format = "sha256"
 
 [[files]]
-file = ".claude/settings.json"
-hash = "ce4999d89dbe2d8ee3cd1488a7fe8f31258591723352fed8a45abadeb1b124d1"
-
-[[files]]
-file = ".github/workflows/auto-update.yml"
-hash = "a46c1841e186d08329ac19a62404eddebf3daabad73229a075d1f4ca76ecebe7"
-
-[[files]]
-file = ".github/workflows/deploy.yml"
-hash = "c3a564b2d4686530781b826f9c07027987f6f970f46d4e61ad1184725dd4f7b8"
-
-[[files]]
-file = ".github/workflows/release.yml"
-hash = "1a717f940b09adb450ebfd5b36a36c88ecc20ef5ddaf84afe1c28bc7bdd9484d"
-
-[[files]]
-file = ".wrangler/cache/pages.json"
-hash = "1bdea6775b7b760c2b58fdaf42e3b83af387859779d1dc1baf1f1dc2b76dcbb3"
-
-[[files]]
-file = ".wrangler/cache/wrangler-account.json"
-hash = "e1355563679b17560f79779219a29b70fb34dfaa732829ab938b0587b99cddc9"
-
-[[files]]
-file = "CLAUDE.md"
-hash = "18602527b196145435e5a3efe42a0b0a457b07e7abe0bc0c9a248e81724ff02c"
-
-[[files]]
-file = "README.md"
-hash = "3349c121a3301f349055756419a853828ee5862d776edc5be4ca9b4860359aa8"
-
-[[files]]
-file = "_headers"
-hash = "502906683b25bfc4b0d8ae382c30225b4c523bef6ed135f25b0257e51a2bb320"
-
-[[files]]
-file = "docs/CONTEXT.md"
-hash = "05a1bb0a86975ad357cb10e728eade5231f915eb283bcb45171f3149ef9f24da"
-
-[[files]]
-file = "docs/Nouvelle Terre.zip"
-hash = "a514955de593980f42b8ae93ea24bfc0aa8c31616e1decbd7f54550bd50d9b87"
-
-[[files]]
-file = "instance/instance.cfg"
-hash = "0687d4f38bdf896ee8fa5cf1af36785fe45003fdb8f3141143242ea57d5bd290"
-
-[[files]]
-file = "instance/mmc-pack.json"
-hash = "e7055046641839db625e36ef068caa11b080f6c493fd344ec9a96161e7871b2d"
-
-[[files]]
-file = "instance/servers.dat"
-hash = "4de695626cf59fe672a64ef68578ca1b45967a178f4fac584123cd3c4ae17ae7"
-
-[[files]]
 file = "mods/architectury.pw.toml"
 hash = "11de43e7f5657870c2d18c0a8f8cdc553f2fc22fa7b98b3177453a2d58a1c590"
 metafile = true
@@ -345,11 +289,3 @@ metafile = true
 file = "mods/zoomify.pw.toml"
 hash = "f0ef085dfd0a0856419b2c1f36e11359d7c5787575cd07a185db847a567a8730"
 metafile = true
-
-[[files]]
-file = "packwiz-installer-bootstrap.jar"
-hash = "a8fbb24dc604278e97f4688e82d3d91a318b98efc08d5dbfcbcbcab6443d116c"
-
-[[files]]
-file = "scripts/update-bridge.ps1"
-hash = "298842892f714b2df5a20cfd4fe042a2e03b85825bdf9bff313bfc095a09b2d3"

@@ -1,0 +1,12 @@
+.github/
+.wrangler/
+.claude/
+docs/
+instance/
+scripts/
+*.md
+*.jar
+*.zip
+*.json
+*.ps1
+_headers
