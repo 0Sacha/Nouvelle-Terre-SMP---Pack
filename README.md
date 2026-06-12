@@ -8,6 +8,7 @@ Bienvenue sur **Nouvelle Terre** ! Suis ce guide pour rejoindre le serveur. L'in
 
 - Un compte **Minecraft Java Edition** légitime
 - **Prism Launcher** (gratuit, open-source) — c'est le launcher qu'on utilise à la place du launcher officiel Minecraft
+- **8 Go de RAM minimum alloués à Minecraft** — en dessous, le jeu sera saccadé (voir configuration ci-dessous)
 
 ---
 
@@ -38,6 +39,19 @@ Bienvenue sur **Nouvelle Terre** ! Suis ce guide pour rejoindre le serveur. L'in
 5. Clique sur **OK**
 
 L'instance **Nouvelle Terre** apparaît dans Prism. C'est bon !
+
+---
+
+## Étape 3.5 — Allouer 8 Go de RAM
+
+Cette étape est **importante** pour éviter les lags et saccades.
+
+1. Dans Prism Launcher, **clic droit** sur l'instance **Nouvelle Terre** → **Modifier**
+2. Onglet **Paramètres** → coche **Mémoire**
+3. Règle **Mémoire maximale (RAM)** à **8192 Mo** (8 Go) minimum
+4. Clique sur **Fermer**
+
+> Si tu n'as que 8 Go de RAM sur ton PC, mets **4096 Mo** et ferme un maximum d'autres applications.
 
 ---
 
