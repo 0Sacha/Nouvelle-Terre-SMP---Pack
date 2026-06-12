@@ -1,4 +1,3 @@
 *.mrpack
 docs/*.zip
 .wrangler/
-.claude/
