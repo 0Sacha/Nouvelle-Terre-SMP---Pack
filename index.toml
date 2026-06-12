@@ -14,7 +14,7 @@ hash = "c3a564b2d4686530781b826f9c07027987f6f970f46d4e61ad1184725dd4f7b8"
 
 [[files]]
 file = ".github/workflows/release.yml"
-hash = "e2a1328da35e64944bcddff0757499ed3b3c38afcb07fbe34666cfdcf84d0128"
+hash = "1a717f940b09adb450ebfd5b36a36c88ecc20ef5ddaf84afe1c28bc7bdd9484d"
 
 [[files]]
 file = ".wrangler/cache/pages.json"
@@ -46,7 +46,7 @@ hash = "a514955de593980f42b8ae93ea24bfc0aa8c31616e1decbd7f54550bd50d9b87"
 
 [[files]]
 file = "instance/instance.cfg"
-hash = "dca6c437ea581dc4fe01bf6aafc7718a839a1d88e1bed52c17c090a261138f68"
+hash = "0687d4f38bdf896ee8fa5cf1af36785fe45003fdb8f3141143242ea57d5bd290"
 
 [[files]]
 file = "instance/mmc-pack.json"
