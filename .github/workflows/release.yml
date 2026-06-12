@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir -p "Nouvelle Terre/.minecraft"
           cp packwiz-installer-bootstrap.jar "Nouvelle Terre/.minecraft/"
+          cp instance/servers.dat "Nouvelle Terre/.minecraft/"
           cp instance/mmc-pack.json "Nouvelle Terre/"
           cp instance/instance.cfg "Nouvelle Terre/"
           zip -r "Nouvelle Terre.zip" "Nouvelle Terre/"
