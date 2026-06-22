@@ -36,6 +36,11 @@ hash = "8e6fea5ab1c6be6af908d389e50cfc4b4eb0341dc139e093fa0f17155f23ec7f"
 metafile = true
 
 [[files]]
+file = "mods/cottonmod.pw.toml"
+hash = "0c80a57928b1642d4445832d56b4f4e6dd2ef74b089851ad62595e6413226c76"
+metafile = true
+
+[[files]]
 file = "mods/create-bluemap.pw.toml"
 hash = "d98d5380418035c038474bad891e876fbb831a2ae26658e51f508a9528f8d12e"
 metafile = true

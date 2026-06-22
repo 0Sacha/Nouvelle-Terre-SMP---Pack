@@ -1,0 +1,8 @@
+name = "Cotton Mod"
+filename = "cottonmod-1.1.0.jar"
+side = "both"
+
+[download]
+url = "https://github.com/tjobard95/cottonmod/releases/download/v1.1.0/cottonmod-1.1.0.jar"
+hash-format = "sha1"
+hash = "1f2b94a68f2cf9aff5b94a98a198ecb50535d429"
