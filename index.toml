@@ -256,11 +256,6 @@ hash = "baef86e47acf0530c70dfd92652881ce1bb441feb90cad84166b46946bac2317"
 metafile = true
 
 [[files]]
-file = "mods/styledplayerlist.pw.toml"
-hash = "b906781993b10c7b194df3806576091bc69e3b2465b3230307e8bbefafe85555"
-metafile = true
-
-[[files]]
 file = "mods/tectonic.pw.toml"
 hash = "3efbb8e077ad91745167aca439bb63eb05740c751956464c7c7a02af89fadb51"
 metafile = true
