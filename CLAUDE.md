@@ -5,7 +5,7 @@ Repo packwiz du modpack Nouvelle Terre. Contient les fichiers `.pw.toml` de tous
 ## Infrastructure
 
 - **Hébergement packwiz** : `https://pack.nouvelle-terre.notdefined.studio/pack.toml` (Cloudflare Pages, projet `nouvelle-terre-pack`)
-- **Auto-déploiement** : GitHub Actions sur push `main` → Cloudflare Pages (`.github/workflows/deploy.yml`)
+- **Auto-déploiement** : GitHub Actions sur push `main` → Cloudflare Pages + Modrinth (`.github/workflows/deploy.yml`)
 - **Serveur Minecraft** : `play.notdefined.studio` (DNS SRV → `91.197.6.86:24314`)
 
 ## Pipeline CI/CD
@@ -16,14 +16,13 @@ Ce repo est la deuxième étape du pipeline automatique :
 2. Le repo MOD envoie un `repository_dispatch` `mod-released` à **ce repo**
 3. GitHub Actions met à jour `nouvelle-terre-bridge.pw.toml` + `packwiz refresh` + commit + push
 4. Cloudflare Pages redéploie automatiquement
-5. Les joueurs reçoivent la mise à jour au prochain lancement de Prism
+5. Modrinth reçoit une nouvelle version du `.mrpack`
+6. Les joueurs voient la mise à jour disponible dans l'app Modrinth
 
 ## Distribution joueurs
 
-- **Release GitHub** : `https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack/releases/latest`
-- Contient `Nouvelle Terre.zip` — instance Prism pré-configurée
-- Pre-launch configuré : `"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://pack.nouvelle-terre.notdefined.studio/pack.toml`
-- Les joueurs importent le `.zip` dans Prism → les mods se mettent à jour automatiquement à chaque lancement
+- **Modrinth** : `https://modrinth.com/project/V9xFVxMk`
+- Les joueurs installent le modpack via l'app Modrinth → les mises à jour sont proposées automatiquement
 
 ## Commandes utiles
 
@@ -61,6 +60,8 @@ git push
 
 - `CLOUDFLARE_API_TOKEN` — deploy Cloudflare Pages
 - `PACK_UPDATE_TOKEN` — PAT GitHub (scope `repo`) pour recevoir le `repository_dispatch` du repo MOD
+- `MODRINTH_TOKEN` — token API Modrinth pour publier le `.mrpack`
+- `MODRINTH_PROJECT_ID` — ID du projet Modrinth (`V9xFVxMk`)
 
 ## Repos liés
 

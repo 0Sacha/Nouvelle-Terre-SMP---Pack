@@ -1,4 +1,4 @@
-# 🌍 Nouvelle Terre — Installation du modpack
+# Nouvelle Terre — Installation du modpack
 
 Bienvenue sur **Nouvelle Terre** ! Suis ce guide pour rejoindre le serveur. L'installation prend environ **5 minutes** et tu n'auras plus rien à faire après ça — les mises à jour sont automatiques.
 
@@ -7,49 +7,37 @@ Bienvenue sur **Nouvelle Terre** ! Suis ce guide pour rejoindre le serveur. L'in
 ## Ce dont tu as besoin
 
 - Un compte **Minecraft Java Edition** légitime
-- **Prism Launcher** (gratuit, open-source) — c'est le launcher qu'on utilise à la place du launcher officiel Minecraft
+- **L'application Modrinth** (gratuite, open-source) — [modrinth.com/app](https://modrinth.com/app)
 - **8 Go de RAM minimum alloués à Minecraft** — en dessous, le jeu sera saccadé (voir configuration ci-dessous)
 
 ---
 
-## Étape 1 — Installer Prism Launcher
+## Étape 1 — Installer l'application Modrinth
 
-1. Va sur **[prismlauncher.org](https://prismlauncher.org)**
+1. Va sur **[modrinth.com/app](https://modrinth.com/app)**
 2. Clique sur **Download** et choisis ta version (Windows, Mac ou Linux)
 3. Installe-le normalement
 4. Au premier lancement, connecte ton compte Microsoft/Minecraft quand il te le demande
 
-> Si tu as déjà Prism Launcher d'installé, passe directement à l'étape 2.
+> Si tu as déjà l'application Modrinth d'installée, passe directement à l'étape 2.
 
 ---
 
-## Étape 2 — Télécharger le modpack
+## Étape 2 — Installer le modpack
 
-1. Va sur la page des **[Releases GitHub](https://github.com/0Sacha/Nouvelle-Terre-SMP---Pack/releases/latest)**
-2. Télécharge le fichier **`Nouvelle Terre.zip`**
-
----
-
-## Étape 3 — Importer dans Prism
-
-1. Ouvre **Prism Launcher**
-2. Clique sur **Ajouter une instance** (en haut à gauche)
-3. Dans le menu qui s'ouvre, clique sur **Importer** (dans la liste à gauche)
-4. Clique sur **Parcourir** et sélectionne le fichier **`Nouvelle Terre.zip`** que tu viens de télécharger
-5. Clique sur **OK**
-
-L'instance **Nouvelle Terre** apparaît dans Prism. C'est bon !
+1. Ouvre ce lien : **[Nouvelle Terre sur Modrinth](https://modrinth.com/project/V9xFVxMk)**
+2. Clique sur **Install** — l'application Modrinth s'ouvre automatiquement
+3. Confirme l'installation
 
 ---
 
-## Étape 3.5 — Allouer 8 Go de RAM
+## Étape 3 — Allouer 8 Go de RAM
 
 Cette étape est **importante** pour éviter les lags et saccades.
 
-1. Dans Prism Launcher, **clic droit** sur l'instance **Nouvelle Terre** → **Modifier**
-2. Onglet **Paramètres** → coche **Mémoire**
-3. Règle **Mémoire maximale (RAM)** à **8192 Mo** (8 Go) minimum
-4. Clique sur **Fermer**
+1. Dans l'application Modrinth, clique sur **les trois points** à côté de l'instance **Nouvelle Terre** → **Edit**
+2. Dans les paramètres de l'instance, règle la **RAM** à **8192 Mo** (8 Go) minimum
+3. Sauvegarde
 
 > Si tu n'as que 8 Go de RAM sur ton PC, mets **4096 Mo** et ferme un maximum d'autres applications.
 
@@ -57,11 +45,9 @@ Cette étape est **importante** pour éviter les lags et saccades.
 
 ## Étape 4 — Lancer le jeu
 
-Double-clique sur l'instance **Nouvelle Terre** pour lancer le jeu.
+Clique sur **Play** sur l'instance **Nouvelle Terre**.
 
-Au premier lancement, une fenêtre noire va s'ouvrir quelques secondes — c'est **normal**. C'est le système de mise à jour automatique qui vérifie que tu as bien la dernière version du modpack. Ça ne dure que quelques secondes.
-
-Ensuite Minecraft se lance tout seul. Tu peux rejoindre le serveur :
+Une fois Minecraft lancé, rejoins le serveur :
 
 ```
 play.notdefined.studio
@@ -69,28 +55,22 @@ play.notdefined.studio
 
 ---
 
-## Les mises à jour, c'est automatique 🎉
+## Les mises à jour, c'est automatique
 
-Tu n'as **rien à faire** quand le modpack est mis à jour. À chaque fois que tu lances le jeu depuis Prism, le système vérifie automatiquement s'il y a des nouveautés et les télécharge tout seul. Tu verras juste la fenêtre noire pendant quelques secondes de plus que d'habitude.
+Tu n'as **rien à faire** quand le modpack est mis à jour. L'application Modrinth détecte automatiquement les nouvelles versions — un bouton **Update** apparaît sur l'instance quand une mise à jour est disponible.
 
 ---
 
 ## Problèmes fréquents
 
-**Une fenêtre d'erreur "Failed file downloads" apparaît au lancement**
-→ C'est normal lors de la toute première installation. Clique sur **Continue** (pas sur "Cancel launch") et le jeu se lance quand même. Les mods se téléchargeront correctement au lancement suivant.
-
 **Le jeu ne se lance pas / erreur au démarrage**
-→ Vérifie que tu es bien connecté à internet au lancement (le système de mise à jour en a besoin)
+→ Vérifie que tu es bien connecté à internet au lancement
 
 **"Impossible de se connecter au serveur"**
-→ Vérifie l'IP et le port. Assure-toi que tu lances bien l'instance **Nouvelle Terre** dans Prism et pas une autre instance
+→ Vérifie l'IP. Assure-toi que tu lances bien l'instance **Nouvelle Terre** et pas une autre
 
-**La fenêtre noire reste bloquée longtemps**
-→ Attends 1-2 minutes, c'est peut-être une mise à jour importante. Si ça dépasse 5 minutes, contacte un admin sur le Discord
-
-**Prism me demande de choisir une version Java**
-→ Choisis la version **Java 17**
+**La version Java n'est pas reconnue**
+→ Dans les paramètres de l'instance, sélectionne manuellement **Java 17**
 
 ---
 

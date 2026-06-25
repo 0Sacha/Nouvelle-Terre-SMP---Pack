@@ -2,7 +2,6 @@
 .wrangler/
 .claude/
 docs/
-instance/
 scripts/
 *.md
 *.jar

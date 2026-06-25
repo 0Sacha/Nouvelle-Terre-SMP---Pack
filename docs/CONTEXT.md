@@ -15,15 +15,15 @@ Briefing pour Claude. Documente l'état du projet pour reprendre n'importe quand
 
 - **Serveur Minecraft** : `play.notdefined.studio` (DNS SRV → `91.197.6.86:24314`, Minestrator)
 - **Pack hébergé** : `https://pack.nouvelle-terre.notdefined.studio/pack.toml` (Cloudflare Pages)
+- **Modrinth** : `https://modrinth.com/project/V9xFVxMk`
 - **Bot Discord** : user `Nouvelle Terre#9576`, Guild ID `1508123190797406432`
 - **Fabric Loader** : `0.15.7`, **Minecraft** : `1.20.1`
 
 ## Stack technique
 
-- **packwiz** + **Cloudflare Pages** + **Prism Launcher**
-- Les joueurs importent `Nouvelle Terre.zip` (instance Prism pré-configurée) depuis les releases GitHub
-- Pre-launch Prism : `"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://pack.nouvelle-terre.notdefined.studio/pack.toml`
-- Mises à jour automatiques à chaque lancement
+- **packwiz** + **Cloudflare Pages** + **Modrinth**
+- Les joueurs installent le modpack via l'app Modrinth (`https://modrinth.com/app`)
+- Mises à jour proposées automatiquement via l'app Modrinth
 
 ## Pipeline CI/CD (100% automatique)
 
@@ -34,8 +34,8 @@ Push sur repo MOD → GitHub Actions :
 4. Redémarre le serveur via **RCON** (port `40539`) avec `/stop` → Minestrator redémarre auto
 5. Envoie `repository_dispatch` `mod-released` → repo Pack se met à jour automatiquement
 6. Push sur repo Pack → en parallèle :
-   - Cloudflare déploie `pack.toml` → joueurs mis à jour au prochain lancement
-   - Release GitHub recréée avec le nouveau `Nouvelle Terre.zip`
+   - Cloudflare déploie `pack.toml`
+   - Modrinth reçoit une nouvelle version du `.mrpack`
 
 ## Secrets GitHub
 
@@ -43,6 +43,8 @@ Push sur repo MOD → GitHub Actions :
 |--------|-------|-------|
 | `CLOUDFLARE_API_TOKEN` | Pack | Déploiement Cloudflare Pages |
 | `PACK_UPDATE_TOKEN` | MOD + Pack | Cross-repo dispatch + commit |
+| `MODRINTH_TOKEN` | Pack | Publication `.mrpack` sur Modrinth |
+| `MODRINTH_PROJECT_ID` | Pack | ID projet Modrinth (`V9xFVxMk`) |
 | `SFTP_PASSWORD` | MOD | Upload JAR sur serveur |
 | `RCON_PASSWORD` | MOD | Redémarrage serveur |
 
@@ -68,19 +70,12 @@ pack.toml                        ← config packwiz (servi par Cloudflare)
 index.toml                       ← index auto-généré par packwiz
 _headers                         ← CORS Cloudflare Pages
 mods/                            ← références mods (.pw.toml)
-instance/
-  mmc-pack.json                  ← composants Prism (MC 1.20.1 + Fabric 0.15.7)
-  instance.cfg                   ← nom instance + commande pre-launch packwiz
 scripts/
   update-bridge.ps1              ← mise à jour manuelle nouvelle-terre-bridge
 .github/workflows/
-  deploy.yml                     ← déploiement Cloudflare sur push
+  deploy.yml                     ← déploiement Cloudflare + publication Modrinth sur push
   auto-update.yml                ← écoute mod-released, met à jour le pack
-  release.yml                    ← construit Nouvelle Terre.zip et publie la release
 docs/
   CONTEXT.md                     ← ce fichier
 README.md                        ← guide installation joueurs
 ```
-
-> Le `Nouvelle Terre.zip` est une instance Prism vide (pas de mods). Les mods sont téléchargés
-> au premier lancement via `packwiz-installer-bootstrap.jar` (téléchargé dynamiquement par `release.yml`).
