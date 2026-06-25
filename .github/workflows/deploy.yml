@@ -1,11 +1,12 @@
-name: Deploy to Cloudflare Pages
+name: Deploy
 
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy:
+  cloudflare:
+    name: Deploy to Cloudflare Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,3 +17,31 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: f313163bef0e713b6b3c268c7e88e73e
           command: pages deploy . --project-name=nouvelle-terre-pack --commit-dirty=true
+
+  modrinth:
+    name: Publish to Modrinth
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      - name: Export .mrpack
+        run: packwiz modrinth export
+
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{ secrets.MODRINTH_PROJECT_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          files: "*.mrpack"
+          name: "Pack #${{ github.run_number }}"
+          version: "1.0.${{ github.run_number }}"
+          version-type: beta
+          game-versions: 1.20.1
+          loaders: fabric
