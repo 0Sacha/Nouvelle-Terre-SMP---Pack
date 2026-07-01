@@ -281,6 +281,21 @@ hash = "4489fffad4a4797906483b2bd5dd29d51b0af4e0330fb2fef866cf243478045f"
 metafile = true
 
 [[files]]
+file = "mods/waterframes.pw.toml"
+hash = "c890e5a6241113a49c30241c8f08cab161ae3880ca0f6f9325aecd4b76adf6a8"
+metafile = true
+
+[[files]]
+file = "mods/watermedia.pw.toml"
+hash = "b606df4e35b39785a7e02c05f31014877fa3cf1448a2f3e8797e557b19a80fa5"
+metafile = true
+
+[[files]]
+file = "mods/watervision.pw.toml"
+hash = "1d954e3b9985b3434b38bf84d8a4a615180aa1b0dc2c4088e06f37bfbb879067"
+metafile = true
+
+[[files]]
 file = "mods/yet-another-config-lib.pw.toml"
 hash = "abeb2a95e784d3cd210f235ec0de48a89e29ee06467a1f5beb8bdc6c22947614"
 metafile = true
