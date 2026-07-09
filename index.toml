@@ -197,7 +197,7 @@ metafile = true
 
 [[files]]
 file = "mods/nouvelle-terre-bridge.pw.toml"
-hash = "dd7a1edf7257c0ae898ff6c9f756387f465fb33d4e6460dc3ef7655df375623f"
+hash = "170ba022ced8ef287f00d81a3855745ae25142db37fe0e6fbebed5eb7d7b7858"
 metafile = true
 
 [[files]]
