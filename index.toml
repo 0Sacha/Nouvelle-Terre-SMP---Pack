@@ -46,6 +46,11 @@ hash = "d98d5380418035c038474bad891e876fbb831a2ae26658e51f508a9528f8d12e"
 metafile = true
 
 [[files]]
+file = "mods/create-clockwork.pw.toml"
+hash = "f373c7960bfe5d408a3a739b8057d88aa406b8cef9d820848b0645c9fbc6cc1e"
+metafile = true
+
+[[files]]
 file = "mods/create.pw.toml"
 hash = "4160e44a154c4af9f72f735afc5d6e51dc8d49708d8ed9e44de6e51981d79095"
 metafile = true
@@ -273,6 +278,11 @@ metafile = true
 [[files]]
 file = "mods/toughasnails.pw.toml"
 hash = "345d1e01397640febefb6aa0f700d59147aefe39fba9136e05daf9175af86519"
+metafile = true
+
+[[files]]
+file = "mods/valkyrien-skies.pw.toml"
+hash = "00399f9f3b9c8af1087a60bc60e098d93c9858a4d036a713ad1b5aed9b049572"
 metafile = true
 
 [[files]]
