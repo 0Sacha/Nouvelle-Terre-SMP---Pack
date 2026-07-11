@@ -11,13 +11,13 @@ hash = "05efc9893b34c8d792718801bb98be716a681033372e27a0cf846f4634de6957"
 metafile = true
 
 [[files]]
-file = "mods/bluemap.pw.toml"
-hash = "e31872b410bfc8cbc71b50f38436fc4b770f92f18c65295da3a5a9dee211734f"
+file = "mods/balm.pw.toml"
+hash = "a5f6d8789f4c22fe7fb31d38faf50ccb47a1dc3f7008ea39e44cdd10198a9a41"
 metafile = true
 
 [[files]]
-file = "mods/cadmus.pw.toml"
-hash = "614c179ec4093b665729671cd0757027dc7826c7c0b975b42585b93761c78be1"
+file = "mods/bluemap.pw.toml"
+hash = "e31872b410bfc8cbc71b50f38436fc4b770f92f18c65295da3a5a9dee211734f"
 metafile = true
 
 [[files]]
@@ -46,11 +46,6 @@ hash = "d98d5380418035c038474bad891e876fbb831a2ae26658e51f508a9528f8d12e"
 metafile = true
 
 [[files]]
-file = "mods/create-clockwork.pw.toml"
-hash = "f373c7960bfe5d408a3a739b8057d88aa406b8cef9d820848b0645c9fbc6cc1e"
-metafile = true
-
-[[files]]
 file = "mods/create.pw.toml"
 hash = "4160e44a154c4af9f72f735afc5d6e51dc8d49708d8ed9e44de6e51981d79095"
 metafile = true
@@ -66,8 +61,13 @@ hash = "eb53766cb9a78bbd8dbe200d769834f7a891165ce003e9abab1d3aa12fcc08a3"
 metafile = true
 
 [[files]]
+file = "mods/exposure.pw.toml"
+hash = "f65adc1e72f8059fa5f643e5c48d297fbde9da4a95d10b00c2dd76bd7df192d7"
+metafile = true
+
+[[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "c7166b452baf266703163c43f927b2790e98a3aa4939c712a79cc258032b67a8"
+hash = "d9f5084f3684add4a72eac5500df626a92e5e36eda54d9527ad1da0a16c2060a"
 metafile = true
 
 [[files]]
@@ -83,6 +83,11 @@ metafile = true
 [[files]]
 file = "mods/fabric-seasons.pw.toml"
 hash = "03a3f86b341870fe72bd36aea7717e37a888192d4a1aa976d771c70befab2239"
+metafile = true
+
+[[files]]
+file = "mods/fakename-fabric.pw.toml"
+hash = "e25f33caf38965497d923bccaf6f280db63f5258c12e1bd1dff4ea59ef5ac91a"
 metafile = true
 
 [[files]]
@@ -123,6 +128,11 @@ metafile = true
 [[files]]
 file = "mods/iris.pw.toml"
 hash = "0594ab859b1dcf5a0f9bcbdd0b2e73c9aa8d99af258790d9d8afdaf2e05b07cf"
+metafile = true
+
+[[files]]
+file = "mods/jade.pw.toml"
+hash = "d5faaf6d7e4be8bdf9b1b200edee175c2704ce13abad9d1951a4d4a45b432d4e"
 metafile = true
 
 [[files]]
@@ -202,7 +212,7 @@ metafile = true
 
 [[files]]
 file = "mods/nouvelle-terre-bridge.pw.toml"
-hash = "d1b3d5966727ba2e5a6fcd5347605607b007ec3da3ac85168873e9187490bb80"
+hash = "02bd4bf91260134b8b6fbfdb75a6aa8e670587ca0470a7d337adf5a939c93c37"
 metafile = true
 
 [[files]]
@@ -276,38 +286,23 @@ hash = "a5c8d71c504ab041898745cc1d2883f4521bb55eeb0cdc5d8700e404ebddec1b"
 metafile = true
 
 [[files]]
-file = "mods/toughasnails.pw.toml"
-hash = "345d1e01397640febefb6aa0f700d59147aefe39fba9136e05daf9175af86519"
-metafile = true
-
-[[files]]
-file = "mods/valkyrien-skies.pw.toml"
-hash = "00399f9f3b9c8af1087a60bc60e098d93c9858a4d036a713ad1b5aed9b049572"
-metafile = true
-
-[[files]]
 file = "mods/voicechat.pw.toml"
 hash = "4489fffad4a4797906483b2bd5dd29d51b0af4e0330fb2fef866cf243478045f"
 metafile = true
 
 [[files]]
-file = "mods/waterframes.pw.toml"
-hash = "c890e5a6241113a49c30241c8f08cab161ae3880ca0f6f9325aecd4b76adf6a8"
-metafile = true
-
-[[files]]
-file = "mods/watermedia.pw.toml"
-hash = "9c14d2011a343872dfa72aee64ef7beb2f9f9e47867807b4b03726cfa8e429b7"
-metafile = true
-
-[[files]]
-file = "mods/watervision.pw.toml"
-hash = "1d954e3b9985b3434b38bf84d8a4a615180aa1b0dc2c4088e06f37bfbb879067"
+file = "mods/waystones.pw.toml"
+hash = "7cd814db4d5e755d2923b3a4212fe1468468624d102b239a70eafdbe8e0eda98"
 metafile = true
 
 [[files]]
 file = "mods/yet-another-config-lib.pw.toml"
 hash = "abeb2a95e784d3cd210f235ec0de48a89e29ee06467a1f5beb8bdc6c22947614"
+metafile = true
+
+[[files]]
+file = "mods/zannaghs-armor-hider.pw.toml"
+hash = "297204e0d892a0caa776f7753eabf4481476c30cef93ec0c390dfae1d5cd205e"
 metafile = true
 
 [[files]]
