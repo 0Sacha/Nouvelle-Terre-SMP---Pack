@@ -1,8 +1,8 @@
 name = "Nouvelle Terre Bridge"
-filename = "nouvelle-terre-bridge-1.1.0.jar"
+filename = "nouvelle-terre-bridge-1.2.0.jar"
 side = "both"
 
 [download]
-url = "https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD/releases/download/v1.1.0-74e3554/nouvelle-terre-bridge-1.1.0.jar"
+url = "https://github.com/0Sacha/Nouvelle-Terre-SMP---MOD/releases/download/v1.2.0-b910877/nouvelle-terre-bridge-1.2.0.jar"
 hash-format = "sha1"
-hash = "c5e1c63fc4d5fe97cfbac1aefc9e6c938bb3e069"
+hash = "5245528491ba6af88e022b05bfe15c6af32c8560"
