@@ -22,10 +22,10 @@ C'est **le seul workflow automatique restant**. Il n'y a plus de déploiement Cl
 
 1. S'assurer que le repo est à jour (`git pull`) et que les mods voulus sont ajoutés/à jour
 2. Bump `pack.toml` → champ `version` : incrémenter le numéro `1.0.x` (ex: `1.0.74` → `1.0.75`). **Ne jamais repartir à `0.1.0`** — l'ancien CI publiait déjà des versions `1.0.$run_number` sur Modrinth (dernière automatique : `1.0.72`), donc une version plus basse apparaîtrait comme un downgrade dans la liste des versions Modrinth
-3. `packwiz refresh` puis `packwiz modrinth export` → génère `Nouvelle Terre-<version>.mrpack` à la racine du repo (déjà dans `.gitignore`)
+3. `packwiz refresh` puis `packwiz modrinth export` → génère `Nouvelle Terre-<version>.mrpack` à la racine du repo (déjà dans `.gitignore`), et supprimer le `.mrpack` de la version précédente (ne garder que le dernier export en local)
 4. Uploader ce fichier à la main sur `https://modrinth.com/project/V9xFVxMk/versions` (alias `https://modrinth.com/modpack/nouvelle-terre-mod`), en tapant le même numéro de version dans le formulaire
 5. Rédiger le changelog en **français puis anglais**, à la suite dans le même champ (voir style plus bas)
-6. Committer/pousser le bump de version sur Git
+6. **Toujours** committer et pousser (`git push`) le bump de version et les changements de mods sur Git — ne jamais laisser ces changements en attente localement, même avant l'upload manuel sur Modrinth
 
 **Délai de propagation** : une fois publiée, la nouvelle version peut mettre **jusqu'à ~30 minutes** à apparaître comme mise à jour disponible dans l'app Modrinth des joueurs — ce n'est pas instantané, prévenir en conséquence si besoin.
 
