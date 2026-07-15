@@ -1,12 +1,12 @@
 name = "Nouvelle Terre"
 author = "0Sacha"
-version = "1.0.80"
+version = "1.0.81"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "1c4e35b623f6e4aea96caf6b81cbaf136fb58541922651564ef715064c75b52a"
+hash = "7dadb5d7d44c9c314bb812f2222d1a35db1e09fa07273f62d0c53066910154a1"
 
 [versions]
 fabric = "0.19.2"
