@@ -1,6 +1,16 @@
 hash-format = "sha256"
 
 [[files]]
+file = "mods/ad-astra.pw.toml"
+hash = "ff4b1002e2ca246ab15c2d9889832e873e49cb05fe9916f3282f92bd53294ca8"
+metafile = true
+
+[[files]]
+file = "mods/appleskin.pw.toml"
+hash = "f3f98ccb142504aa558f3250b5a9bcda5d9fb45634562a4b7f886489575f6f5a"
+metafile = true
+
+[[files]]
 file = "mods/architectury.pw.toml"
 hash = "dafd35daedb1e31d4fecadd2086f27e323d6cff22ab743e0895fb4470eaa85d9"
 metafile = true
@@ -21,8 +31,18 @@ hash = "e31872b410bfc8cbc71b50f38436fc4b770f92f18c65295da3a5a9dee211734f"
 metafile = true
 
 [[files]]
+file = "mods/botarium.pw.toml"
+hash = "2f57caef93731338be19b1e14065978eb3e14dbfc0c1f9699dfcc2f201e2c23b"
+metafile = true
+
+[[files]]
 file = "mods/chipped.pw.toml"
 hash = "6db0864f3a57dae95c87047303b8a4511a98eddca5d8090d7ce291e34ed599df"
+metafile = true
+
+[[files]]
+file = "mods/clientsort.pw.toml"
+hash = "7a5a5f34cf985b32ecce6b6c2827fad48d5544f87af7235b8d1160f9a98e2b11"
 metafile = true
 
 [[files]]
@@ -196,6 +216,11 @@ hash = "98f7793c4ee30841c0b77a8dccfb9ef06bc9be982799ca932feca56cea8e5d4a"
 metafile = true
 
 [[files]]
+file = "mods/modmenu.pw.toml"
+hash = "d7145fd1bd8b4bb6a3b84652a96a68870fb3ab32230f27520bb9362fd17ec39f"
+metafile = true
+
+[[files]]
 file = "mods/moremobvariants.pw.toml"
 hash = "9ddeef5bd6e7c15e83c4c6834ea8dfbf038832b801951e8fbe239f2ac7a9fe18"
 metafile = true
@@ -218,6 +243,11 @@ metafile = true
 [[files]]
 file = "mods/owo-lib.pw.toml"
 hash = "4ddfb75e95f0a37c837c617d6221148b9fe3a311b2d5a9f842de5fb9b91aef72"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-config.pw.toml"
+hash = "77a658a9d9cec5037136b95c42d1dff26dbf4010f17ecb2116bebf69178a03ba"
 metafile = true
 
 [[files]]
@@ -256,6 +286,11 @@ hash = "f50af52d09a0391406a6e8504ded315279fecd805aeb7c16fe2d8d477982be05"
 metafile = true
 
 [[files]]
+file = "mods/storagedrawers.pw.toml"
+hash = "a7cff3a04db0673f1a5a9513015c83ae0a6bee936a8c6a1ed08ae12e0e3ba2f6"
+metafile = true
+
+[[files]]
 file = "mods/styled-chat.pw.toml"
 hash = "b579a634f3a7bf40be77c7ba9f077332a8a30c9ef51484d21fa6b29f8c7f91e5"
 metafile = true
@@ -278,6 +313,11 @@ metafile = true
 [[files]]
 file = "mods/terralith.pw.toml"
 hash = "a5c8d71c504ab041898745cc1d2883f4521bb55eeb0cdc5d8700e404ebddec1b"
+metafile = true
+
+[[files]]
+file = "mods/universal-graves.pw.toml"
+hash = "3850ba97b0333e8a93577e2d6352659e63bdefa295c704b18431ae233b6040e8"
 metafile = true
 
 [[files]]
