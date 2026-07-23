@@ -5,8 +5,7 @@ Repo packwiz du modpack Nouvelle Terre. Contient les fichiers `.pw.toml` de tous
 ## Infrastructure
 
 - **Serveur Minecraft** : `play.notdefined.studio` (DNS SRV → `91.197.6.86:24314`)
-- **Distribution joueurs** : 100% des joueurs installent/mettent à jour le pack via l'app Modrinth (`https://modrinth.com/app`). Personne n'utilise de lien packwiz direct.
-- Ce repo n'est déployé nulle part automatiquement (plus de Cloudflare Pages) : il sert uniquement de source de vérité packwiz, exportée et publiée à la main sur Modrinth.
+- **Distribution joueurs** : 100% des joueurs installent/mettent à jour le pack via l'app Modrinth. Il n'y a pas de déploiement automatique : le repo est la source de vérité packwiz, exportée et publiée manuellement sur Modrinth.
 
 ## Pipeline CI/CD
 
@@ -14,9 +13,9 @@ Repo packwiz du modpack Nouvelle Terre. Contient les fichiers `.pw.toml` de tous
 2. Le repo MOD envoie un `repository_dispatch` `mod-released` à **ce repo**
 3. GitHub Actions (`.github/workflows/auto-update.yml`) met à jour `mods/nouvelle-terre-bridge.pw.toml` (nouvelle URL de download + hash) + `packwiz refresh` + commit + push automatique
 
-C'est **le seul workflow automatique restant**. Il n'y a plus de déploiement Cloudflare Pages ni de publication Modrinth automatique (l'ancien workflow `mc-publish` poussait des versions que Modrinth rejetait) — voir `.github/workflows/` (seul `auto-update.yml` existe).
+C'est **le seul workflow automatique** : `auto-update.yml` met à jour le bridge mod automatiquement.
 
-**Après un push automatique de `auto-update.yml`**, penser à `git pull` avant de reprendre du travail sur ce repo en local, puis à régénérer et republier le `.mrpack` si une nouvelle version du mod bridge vient de sortir.
+**Après chaque auto-update**, faire `git pull` en local, puis régénérer et republier le `.mrpack` si le bridge mod a changé.
 
 ## Publier une nouvelle version sur Modrinth (manuel)
 
