@@ -66,11 +66,6 @@ hash = "8e6fea5ab1c6be6af908d389e50cfc4b4eb0341dc139e093fa0f17155f23ec7f"
 metafile = true
 
 [[files]]
-file = "mods/cottonmod.pw.toml"
-hash = "0c80a57928b1642d4445832d56b4f4e6dd2ef74b089851ad62595e6413226c76"
-metafile = true
-
-[[files]]
 file = "mods/create-bluemap.pw.toml"
 hash = "d98d5380418035c038474bad891e876fbb831a2ae26658e51f508a9528f8d12e"
 metafile = true
@@ -321,6 +316,11 @@ hash = "98f7793c4ee30841c0b77a8dccfb9ef06bc9be982799ca932feca56cea8e5d4a"
 metafile = true
 
 [[files]]
+file = "mods/medical-mod.pw.toml"
+hash = "04ec426e20d14a83085b32df452063eb1fe4a014ee036314491a8dabf3c660b6"
+metafile = true
+
+[[files]]
 file = "mods/modmenu.pw.toml"
 hash = "d7145fd1bd8b4bb6a3b84652a96a68870fb3ab32230f27520bb9362fd17ec39f"
 metafile = true
@@ -373,6 +373,11 @@ metafile = true
 [[files]]
 file = "mods/restart-server.pw.toml"
 hash = "1e89db45da4d2a1d213f8f641182c5df664ba896f66313a24b2fbcea674d4161"
+metafile = true
+
+[[files]]
+file = "mods/securitycraft-fabric.pw.toml"
+hash = "2038795d7e312bac6217c3750ba9a34c1fe129af754bd3db12c6d66e1ef2e425"
 metafile = true
 
 [[files]]

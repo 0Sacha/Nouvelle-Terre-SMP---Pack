@@ -1,0 +1,8 @@
+name = "medical-mod"
+filename = "medical-mod-2.0.1.jar"
+side = "both"
+
+[download]
+url = "https://github.com/tjobard95/medicale-mod/releases/download/v2.0.1/medical-mod-2.0.1.jar"
+hash-format = "sha256"
+hash = "0512ef1af519f5c236adb4e9d628bc157b86c8ce0e2bcd6df1331c027b27ef66"
