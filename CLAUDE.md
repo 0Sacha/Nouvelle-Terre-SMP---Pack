@@ -36,15 +36,35 @@ Toujours écrire deux blocs à la suite : français d'abord, anglais ensuite. Pu
 
 **Rester sur la branche `2.x` de WaterMedia (`watermedia.pw.toml`), jamais `3.x`.**
 
-WaterFrames (dernière release Fabric 1.20.1 : `v2.1.22`, oct. 2025) et WaterVision (dernière release Fabric 1.20.1 : `v0.1.0-alpha`, sept. 2025) sont construits contre l'API WaterMedia 2.x. WaterMedia 3.x (depuis ~janvier 2026) a refactorisé son API/ses packages, et aucun des deux mods compagnons n'a de build Fabric 1.20.1 compatible v3. Combo confirmé fonctionnel : **WaterMedia `2.1.37`** + WaterFrames `2.1.22` + WaterVision `v0.1.0-alpha`, sans jar "binaries" ni "yt-plugin" séparé.
+WaterFrames (dernière release Fabric 1.20.1 : `v2.1.22`, oct. 2025) et WaterVision (dernière release Fabric 1.20.1 : `v0.1.0-alpha`, sept. 2025) sont construits contre l'API WaterMedia 2.x. WaterMedia 3.x (depuis ~janvier 2026) a refactorisé son API/ses packages, et aucun des deux mods compagnons n'a de build Fabric 1.20.1 compatible v3.
 
 Symptôme si on upgrade par erreur vers WaterMedia 3.x : crash au lancement (`NoClassDefFoundError` sur une classe `org.watermedia.*`).
 
-Pour épingler une version précise d'un mod (ex: éviter que `packwiz modrinth add` prenne la dernière version) :
+### Combo exact en place (validé en jeu, `pin = true`)
+
+Ces 5 jars sont ceux de l'instance de référence du serveur, vérifiés identiques au hash sha512 près. **Ne pas les changer sans re-valider en jeu.**
+
+| Fichier meta | Jar | Version-id Modrinth |
+|---|---|---|
+| `watermedia.pw.toml` | `watermedia-2.1.37.jar` | `fB0LmHnR` |
+| `watermedia-binaries.pw.toml` | `watermedia_binaries-3.0.0-rc.4.jar` | `AvQh3tTO` |
+| `watermedia-yt-plugin.pw.toml` | `watermedia_youtube_plugin-2.1.2.jar` | `rDtJujm2` |
+| `waterframes.pw.toml` | `waterframes-FABRIC-mc1.20.1-v2.1.22.jar` | `arCNnrup` |
+| `watervision.pw.toml` | `watervision-FB-mc1.20.1-v0.1.0-alpha.jar` | `BclZMXef` |
+
+Le jar `binaries` porte un numéro `3.0.0-rc.4` mais c'est un projet Modrinth distinct (les binaires VLC), versionné indépendamment de l'API — il ne s'agit **pas** de WaterMedia 3.x. L'extension YouTube, elle, doit rester en `2.1.2` : la `3.0.0-beta.7` appartient bien à la branche 3.x.
+
+Les 5 sont marqués `pin = true`, donc ignorés par `packwiz update --all`. Si l'un doit vraiment bouger : `packwiz unpin <nom>`, changement, re-validation en jeu, puis `packwiz pin <nom>`.
+
+### Épingler une version précise
+
 ```powershell
 & "$env:USERPROFILE\go\bin\packwiz.exe" modrinth add --project-id <project-id> --version-id <version-id> -y
+& "$env:USERPROFILE\go\bin\packwiz.exe" pin <nom-du-mod>
 ```
-⚠️ La résolution automatique des dépendances de packwiz peut ajouter une dépendance "required" d'une branche majeure différente (ex: elle a ajouté `WATERMeDIA: Youtube Extension 3.0.0-beta.7` en épinglant WaterMedia à `2.1.37`). Toujours vérifier `mods/` après un ajout épinglé et `packwiz remove` ce qui ne correspond pas.
+`modrinth add --version-id` fixe la version au moment de l'ajout ; seul `pin` la protège d'un `update --all` ultérieur.
+
+⚠️ La résolution automatique des dépendances de packwiz peut ajouter une dépendance "required" d'une branche majeure différente (ex: elle a ajouté `WATERMeDIA: Youtube Extension 3.0.0-beta.7` en épinglant WaterMedia à `2.1.37` — l'ajout explicite de la `2.1.2` juste après l'a écrasée, même fichier meta). Toujours vérifier `mods/` après un ajout épinglé et `packwiz remove` ce qui ne correspond pas.
 
 ## Commandes utiles
 
@@ -56,7 +76,7 @@ Toujours appeler `packwiz` via son chemin complet : `$env:USERPROFILE\go\bin\pac
 & "$env:USERPROFILE\go\bin\packwiz.exe" update --all
 & "$env:USERPROFILE\go\bin\packwiz.exe" refresh
 ```
-⚠️ Vérifier `mods/watermedia.pw.toml` après un `update --all` — voir contrainte WaterMedia ci-dessus.
+Les 5 jars WaterMedia sont `pin = true` et donc sautés automatiquement — voir contrainte WaterMedia ci-dessus.
 
 ### Ajouter un mod
 
