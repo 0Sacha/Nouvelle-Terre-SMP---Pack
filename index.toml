@@ -452,27 +452,27 @@ metafile = true
 
 [[files]]
 file = "mods/waterframes.pw.toml"
-hash = "c890e5a6241113a49c30241c8f08cab161ae3880ca0f6f9325aecd4b76adf6a8"
+hash = "0998c1bb37caaf8a363b6d916eb22912496ed4f1e93b8084457b6e8567b34088"
 metafile = true
 
 [[files]]
 file = "mods/watermedia-binaries.pw.toml"
-hash = "3a9b775adcf03ffc9c713904afe878c02e66ee681b81ad7205e5cff10dbac777"
+hash = "b8503278a158aadb1fcb1038bb07cb3e6fa484267b58aec99e1655d1c801ac0e"
 metafile = true
 
 [[files]]
 file = "mods/watermedia-yt-plugin.pw.toml"
-hash = "4faf890cddc7addc968e262b4bc55ca47f59e482fa5c23e780def45d099f84e4"
+hash = "79e2fcf85fb4e4e4248844f4ec18daaedcd5a45157222e26383eabb29c99d60e"
 metafile = true
 
 [[files]]
 file = "mods/watermedia.pw.toml"
-hash = "9c14d2011a343872dfa72aee64ef7beb2f9f9e47867807b4b03726cfa8e429b7"
+hash = "976854e8cb0473236ae4ce6b5b29bb901dc46b20d072bfed79e1f07c64b37095"
 metafile = true
 
 [[files]]
 file = "mods/watervision.pw.toml"
-hash = "1d954e3b9985b3434b38bf84d8a4a615180aa1b0dc2c4088e06f37bfbb879067"
+hash = "2295837e952f930ea74654807d057e515a67440cbd8102d8cc26f2b582da5a74"
 metafile = true
 
 [[files]]

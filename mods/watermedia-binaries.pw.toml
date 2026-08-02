@@ -1,6 +1,7 @@
 name = "WATERMEDIA: Multimedia Binaries"
 filename = "watermedia_binaries-3.0.0-rc.4.jar"
 side = "both"
+pin = true
 
 [download]
 url = "https://cdn.modrinth.com/data/4997XcoK/versions/AvQh3tTO/watermedia_binaries-3.0.0-rc.4.jar"
