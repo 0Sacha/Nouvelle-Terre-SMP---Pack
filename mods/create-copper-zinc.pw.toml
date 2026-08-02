@@ -1,0 +1,13 @@
+name = "Create: Copper & Zinc"
+filename = "create_copper_and_zinc-1.6.0-fabric-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/aqYNR6rI/versions/zuDV9GQp/create_copper_and_zinc-1.6.0-fabric-1.20.1.jar"
+hash-format = "sha512"
+hash = "b453e281ccfa6e85437ce68b187c7136310ede07617d39e48e28f6933e3d882ca3f2d41184cf1180927b6e56931cf1621135d74a561c38f275fcd1f1c55d2bb0"
+
+[update]
+[update.modrinth]
+mod-id = "aqYNR6rI"
+version = "zuDV9GQp"
